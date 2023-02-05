@@ -15,7 +15,7 @@ sessions = Sessions()
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return app.send_static_file("index.html")
 @app.route('/ask', methods=['POST'], )
 def ask():
     content_type = request.headers.get('Content-Type')
